@@ -1,0 +1,204 @@
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+body { 
+    font-family: Arial, sans-serif; 
+    line-height: 1.6; 
+    color: #333; 
+    background-color: #ffffff; 
+}
+
+/* Header & Rot-Weiß Design */
+.header-sticky { 
+    background-color: #ffffff; 
+    border-bottom: 3px solid #ff0000; 
+    padding: 1rem; display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    position: sticky; 
+    top: 0; z-index: 1000; 
+    flex-wrap: wrap; 
+}
+
+.logo h3 { 
+    color: #ff0000; 
+}
+
+.navbar { 
+    display: flex; 
+    gap: 20px; 
+}
+.nav-link { 
+    color: #333; 
+    font-weight: bold; 
+    text-decoration: none; 
+    padding: 8px 12px; 
+    border: 1px solid transparent; 
+    transition: 0.3s; 
+}
+.nav-link:hover, .nav-link.active { 
+    border: 1px solid #ff0000; 
+    color: #ff0000; 
+    border-radius: 4px; 
+}
+
+/* Wichtig: Checkbox unsichtbar machen */
+.nav-toggle {
+    display: none !important;
+}
+
+.active-page-title,
+.nav-toggle-label {
+    display: none;
+}
+
+/* Inhalte */
+main { 
+    max-width: 1000px; 
+    margin: 0 auto; 
+    padding: 20px; 
+}
+.section-padding { 
+    padding: 40px 0; 
+}
+
+h2 { 
+    border-bottom: 3px solid #ff0000; 
+    display: inline-block; 
+    padding-bottom: 5px; 
+    margin-bottom: 20px; 
+}
+
+/* Box-Design mit Schatten */
+.about-grid { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 20px; 
+}
+
+.about-box, .card { 
+    background: #fff; 
+    padding: 20px; 
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1); 
+}
+
+.about-box { 
+    display: flex; 
+    gap: 20px; 
+    align-items: center; 
+}
+.about-text { flex: 2; 
+}
+.about-img-wrapper { 
+    flex: 1; 
+    max-width: 350px; 
+}
+
+.img-responsive { 
+    max-width: 100%; 
+    height: auto; 
+    border-radius: 4px; 
+    display: block; 
+}
+
+.grid-3 { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 20px; 
+}
+
+/* Einheitliche Darstellung der Karten-Bilder */
+.card-img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    display: block;
+}
+
+/* Buttons & CTA */
+.btn 
+{ display: inline-block; 
+    padding: 10px 20px; 
+    background: #ff0000; 
+    color: #fff; 
+    text-decoration: none; 
+    border-radius: 5px; 
+    font-weight: bold; 
+    margin-top: 15px; 
+}
+.cta-banner { 
+    background: #fdf2f2; 
+    text-align: center; 
+    border: 1px solid #ff0000; 
+    padding: 40px; 
+    border-radius: 8px; 
+    margin-top: 30px; 
+}
+
+footer { 
+    text-align: center; 
+    padding: 20px; 
+    background: #ff0000; 
+    color: #fff; 
+    margin-top: 40px; 
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .header-sticky {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .active-page-title {
+        display: block;
+        font-weight: bold;
+        color: #ff0000;
+    }
+
+    .nav-toggle-label {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 28px;
+        height: 20px;
+        cursor: pointer;
+    }
+
+    .nav-toggle-label span {
+        display: block;
+        height: 3px;
+        width: 100%;
+        background-color: #ff0000;
+        border-radius: 2px;
+    }
+
+    .navbar { 
+        display: none; 
+        flex-direction: column; 
+        width: 100%; 
+        margin-top: 10px; 
+    }
+    
+    .nav-toggle:checked ~ .navbar { 
+        display: flex; 
+    }
+
+    .nav-link { 
+        width: 100%; 
+    }
+
+    .about-box { 
+        flex-direction: column; 
+    }
+    .about-img-wrapper { 
+        max-width: 100%; 
+    }
+}
